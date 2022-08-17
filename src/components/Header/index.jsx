@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import {Link} from 'react-router-dom'
 import styled from 'styled-components';
 import {IoMoon, IoMoonOutline} from 'react-icons/io5'
 import { Container } from '../Container';
@@ -15,8 +16,8 @@ align-items:center;
 padding: 2rem 0;
 `;
 
-const Title = styled.a.attrs({
-	href:'/'
+const Title = styled(Link).attrs({
+	to:'/'
 })`
 color:var(--colors-text);
 text-decoration:none;

@@ -37,6 +37,7 @@ const CardListItem = styled.li`
   font-weight: var(--fw-light);
   & > b {
     font-weight: var(--fw-bold);
+	 margin-right:1rem;
   }
 `;
 
@@ -52,7 +53,7 @@ const CountryCard = ({img, name, info=[], onClick}) => {
 {
 	info.map(item=>(
 		<CardListItem key={item.title}>
-			<strong>{item.title}:</strong>{item.description}
+			<b>{item.title}:</b>{item.description}
 		</CardListItem>
 	))
 }
