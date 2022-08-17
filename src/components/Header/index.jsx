@@ -28,6 +28,7 @@ color:var(--colors-text);
 font-weight: var(--fw-bold)
 font-size: var(--fs-md);
 cursor:pointer;
+text-transform: capitalize;
 `;
 
 
@@ -43,7 +44,12 @@ export const Header = () => {
         <Wrapper>
 	      <Title>Where is the world?</Title>
       	<ModeSwitcher onClick={toggleTheme}>
-		    <IoMoon/> <span  style={{marginLeft:"0.75rem"}}>Light Theme</span>
+			{theme==="light" ?(
+				<IoMoonOutline size="14px"/>
+			):(
+				<IoMoon size="14px"/> 
+			)}
+		    <span  style={{marginLeft:"0.75rem"}}>{theme} Theme</span>
 	     </ModeSwitcher>
        </Wrapper>
 		</Container>
