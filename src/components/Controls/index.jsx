@@ -21,6 +21,7 @@ const Wrapper = styled.div`
   }
 `;
 
+
 export const Controls = ({ onSearch }) => {
   const [search, setSearch] = useState("");
   const [region, setRegion] = useState("");

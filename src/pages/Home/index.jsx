@@ -1,10 +1,11 @@
-import axios from "axios";
-import {useNavigate} from 'react-router-dom';
 import React, {useState, useEffect} from "react";
-import { ALL_COUNTRIES } from "../../config";
+import {useNavigate} from 'react-router-dom';
+import axios from "axios";
 import CountriesList from "../../components/CountriesList";
 import CountryCard from "../../components/CountryCard";
 import { Controls } from "../../components/Controls";
+import { ALL_COUNTRIES } from "../../config";
+
 
  export const Home = () => {
 	const [countries, setCountries] = useState([]);

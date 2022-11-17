@@ -1,14 +1,18 @@
 import React from "react";
 import styled from "styled-components";
+
 const Wrapper = styled.section``;
 
 const DetailsImage = styled.img``;
 
 const DetailsTitle = styled.h1``;
+
 const ListGroup = styled.div``;
 
 const List = styled.ul``;
+
 const ListItem = styled.li``;
+
 export const CountryInfo = (props) => {
   const {
     name,

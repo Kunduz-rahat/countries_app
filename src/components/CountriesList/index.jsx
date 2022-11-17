@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+
 const Wrapper = styled.section`
   width: 100%;
   padding: 2rem 0;
@@ -16,6 +17,8 @@ const Wrapper = styled.section`
     padding: 2.5rem 0;
   }
 `;
+
+
 const CountriesList = ({ children }) => {
   return <Wrapper>{children}</Wrapper>;
 };

@@ -17,8 +17,6 @@ function App() {
       <Main>
        <Routes>
         <Route exact path='/' element={<Home/>} />
-        
-        
         <Route path='/country/:name' element={<CountryDetails/>}/>
         <Route path="*" element={<NotFound/>}/>
        </Routes>
