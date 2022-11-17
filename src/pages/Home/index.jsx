@@ -7,19 +7,35 @@ import CountryCard from "../../components/CountryCard";
 import { Controls } from "../../components/Controls";
 
  export const Home = () => {
-	const [countries, setCountries] = useState([])
-	const {push} = useNavigate()
+	const [countries, setCountries] = useState([]);
+  const [filteredCountries, setFilteredCountries] = useState(countries)
+	const navigate = useNavigate()
+
+  const handleSearch =(search, region)=>{
+    let data=[...countries]
+    if(region){
+      data = data.filter(country=> country.region.includes(region))
+    }
+    if(search){
+      data = data.filter(country=>country.name.toLowerCase().includes(search.toLowerCase()))
+    }
+    setFilteredCountries(data)
+  }
+
 	console.log(countries)
 	  useEffect(()=>{
+     if(!countries.length)
 	axios.get(ALL_COUNTRIES).then(
 	  ({data}) => setCountries(data))
 	  }, [])
+
+
   return (
 	 <>
-		<Controls/>
+		<Controls onSearch={handleSearch}/>
 <CountriesList>
   {
-    countries.map(country =>{
+    filteredCountries.map(country =>{
       const countryInfo={
         img:country.flags.png,
         name:country.name,
@@ -38,7 +54,7 @@ import { Controls } from "../../components/Controls";
           },
         ],
       };
-      return <CountryCard key={country.name} onClick={()=> push(`/country/${country.name}`)} {...countryInfo}/>
+      return <CountryCard key={country.name} onClick={()=> navigate(`/country/${country.name}`)} {...countryInfo}/>
     })
   }
 </CountriesList>
